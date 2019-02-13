@@ -1,0 +1,47 @@
+<mat-toolbar>
+  <img [routerLink]="['/home']" src="../../../assets/Images/logo.JPG">
+  <div class="title-wrapper">
+    <div class="menu-items-wrapper hide-mobile">
+      <button mat-menu-item *ngFor="let link of links">
+        <span class="button-inner" *ngIf="link.route!='menu-items'" [routerLink]="['/'+link.route]">
+          <mat-icon>{{link.icon}}</mat-icon>
+          <span>{{link.title}}</span>
+        </span>
+
+        <span class="button-inner" *ngIf="link.route=='menu-items'" [matMenuTriggerFor]="menu">
+          <span>{{link.title}}</span>
+          <mat-icon>{{link.icon}}</mat-icon>
+        </span>
+      </button>
+    </div>
+
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item [routerLink]="['/menu-items']" [queryParams]="{item :'appetizer' }">
+        <span>Appetizers</span>
+      </button>
+
+      <button mat-menu-item [routerLink]="['/menu-items']" [queryParams]="{item :'main' }">
+        <span>Main Course</span>
+      </button>
+    </mat-menu>
+  </div>
+
+  <div class="show-mobile">
+    <button mat-icon-button [matMenuTriggerFor]="menuMobile">
+      <mat-icon>reorder</mat-icon>
+    </button>
+
+    <mat-menu #menuMobile="matMenu">
+      <button mat-menu-item *ngFor="let link of links">
+        <span *ngIf="link.route!='menu-items'" [routerLink]="['/'+link.route]">
+          <mat-icon>{{link.icon}}</mat-icon>
+          <span>{{link.title}}</span>
+        </span>
+
+        <span *ngIf="link.route=='menu-items'" [routerLink]="['/'+link.route]">
+          <span>{{link.title}}</span>
+        </span>
+      </button>
+    </mat-menu>
+  </div>
+</mat-toolbar>

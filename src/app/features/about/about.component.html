@@ -1,0 +1,12 @@
+<section class="about-wrapper">
+  <mat-card *ngFor="let item of aboutData">
+    <div class="first-about">
+      <h2>{{item.title}}</h2>
+      <p [innerHtml]="item.desc"></p>
+      <a href="javascript:void(0)">More »</a>
+    </div>
+    <div class="side-title">
+      <h2>{{item.sideTitle}}</h2>
+    </div>
+  </mat-card>
+</section>

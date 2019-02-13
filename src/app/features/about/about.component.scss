@@ -1,0 +1,36 @@
+.about-wrapper {
+  padding:40px 80px;
+  @media (max-width: 697px) {
+    padding: 0;
+  }
+  mat-card {
+    display: flex;
+    box-shadow: none;
+    border-bottom: 1px solid lightgray;
+    align-items: center;
+
+    .first-about{
+      padding-right: 30px;
+      flex-basis: 80%;
+      a{
+        text-decoration: none;
+        font-size: 14px;
+      }
+    }
+
+    &:last-child{
+      border-bottom: none;
+    }
+    &:nth-child(2n) {
+      flex-direction: row-reverse;
+      .first-about{
+        padding-left: 30px;
+      }
+    }
+
+    .side-title{
+      text-align: center;
+      flex-basis: 20%;
+    }
+  }
+}

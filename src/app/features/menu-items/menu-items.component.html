@@ -1,0 +1,15 @@
+<section>
+  <div class="menu-wrapper" [ngClass]="{'grid-items' : onlyAppetizer}">
+    <mat-card *ngFor="let item of filteredItems" class="item-category">
+      <h2>{{item.name}}</h2>
+      <div *ngFor="let innerItem of item.menuOptions" class="menu-item-wrapper">
+        <span>{{innerItem.position + ')  '}}</span>
+        <span>{{innerItem.name}}</span>
+        <p>{{innerItem.description}}</p>
+      </div>
+    </mat-card>
+  </div>
+  <div  class="show-more">
+    <button mat-raised-button [routerLink]="['/menu-items']" *ngIf="onlyAppetizer">See more menu options</button>
+  </div>
+</section>

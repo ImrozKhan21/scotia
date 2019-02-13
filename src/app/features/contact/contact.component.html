@@ -1,0 +1,48 @@
+<section class="contact-wrapper">
+  <mat-card>
+    <div class="section-one">
+      <div class="links-address-wrapper">
+        <div class="links-block">
+          <p>Links</p>
+          <div *ngFor="let link of links">
+            <p class="link-text" [routerLink]="['/'+link.route]">
+              <span>{{link.title}}</span>
+            </p>
+          </div>
+        </div>
+        <div class="address-block">
+          <p>Our Address</p>
+          <p>214, King Street West</p>
+          <p>Downtown, Toronto</p>
+          <p>ONTARIO</p>
+          <p>
+            <mat-icon>perm_phone_msg</mat-icon>
+            :+416 1234 5678
+          </p>
+          <p>
+            <mat-icon>contact_mail</mat-icon>
+            : +416 8765 4321
+          </p>
+          <p>
+            <mat-icon>email</mat-icon>
+            : ilfornello@food.net
+          </p>
+        </div>
+      </div>
+
+      <div class="social-wrapper">
+        <img src="../../../assets/Images/g.svg">
+        <img src="../../../assets/Images/fb.svg">
+        <img src="../../../assets/Images/linkedIn.svg">
+        <img src="../../../assets/Images/twitter.svg">
+        <img src="../../../assets/Images/utube.svg">
+        <mat-icon>mail</mat-icon>
+      </div>
+    </div>
+
+    <div class="section-two">
+      <mat-icon>copyright</mat-icon>
+      <p>Copyright 2015 Ristorante Il Fornello</p>
+    </div>
+  </mat-card>
+</section>

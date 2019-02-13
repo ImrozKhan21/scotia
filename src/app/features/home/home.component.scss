@@ -1,0 +1,23 @@
+.home-wrapper{
+  .sub-home{
+    background: #7884cd;
+
+    .sub-home-content{
+      width: 60%;
+      padding: 20px 60px;
+      margin-left: 20px;
+      color: white;
+
+      @media (max-width: 697px) {
+        width: 100%;
+        padding: 0;
+      }
+
+      h2{
+        margin-bottom: 60px;
+        font-size: 2em;
+      }
+    }
+  }
+}
+
